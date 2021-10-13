@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>Traveo II Entry Family Starter Kit – Getting Started</title>
+  </head>
+  <body>
+    <!-- header start -->
+    <header class="header">
+      <section class="header-imgs"></section>
+      <h1 class="page-title">
+        Traveo II Entry Family Starter Kit – Getting Started
+      </h1>
+    </header>
+    <!-- header end -->
+
+    <!-- main content start -->
+    <main class="content-container">
+      <!-- Section About document start -->
+      <section id="about-document" class="section section-about-document">
+        <h2 class="section-title">About this document</h2>
+        <article class="description-box scope-description">
+          <h5 class="description-title">Scope and purpose</h5>
+          <p class="description">
+            This document explains how to setup and use Traveo™ II Body Entry
+            Family Starter Kit. The document also explains how to debug with
+            single core and dual core environment in IAR Embedded Workbench for
+            ARM (EWARM). The document uses the Traveo™ II Body Entry starter kit
+            board with the Sample Driver Library (SDL).
+          </p>
+        </article>
+        <article class="description-box intended-audience-description">
+          <h5 class="description-title">Intended audience</h5>
+          <p class="description">
+            This document is intended for software and hardware engineers
+            integrating Traveo II Body Entry device into their application.
+          </p>
+        </article>
+      </section>
+      <!-- Section About document end -->
+
+      <!-- Table of content start -->
+      <section id="table-of-contents" class="section section-table-of-contents">
+        <div class="navigation-container">
+          <h3 class="toc-title">Table of contents</h3>
+
+          <!-- navigation start -->
+          <nav class="table-of-contents">
+            <a href="#about-document" class="link link-about-document"
+              >About this document <span class="dotted-space"></span>1</a
+            ><a href="#table-of-contents" class="link link-about-document"
+              >Table of contents <span class="dotted-space"></span>1</a
+            >
+            <!-- list of contents start -->
+            <ol class="list-of-contents">
+              <li class="list-item list-item1">
+                <a href="#getting-started" class="link link-getting-started">
+                  <span class="list-item-count">1</span> Getting started
+                  <span class="dotted-space"></span>2</a
+                >
+                <!-- deep list of contents start -->
+                <ol class="deep-list-of-contents">
+                  <li class="deep-list-item deep-list-item1">
+                    <a
+                      href="#connection-setup"
+                      class="link link-connection-setup"
+                    >
+                      <span class="deep-list-item-count">1.1</span> Connection
+                      setup <span class="dotted-space"></span>2</a
+                    >
+                  </li>
+                  <li class="deep-list-item deep-list-item2">
+                    <a href="#power-up" class="link link-power-up">
+                      <span class="deep-list-item-count">1.2</span> Power up
+                      <span class="dotted-space"></span>2</a
+                    >
+                  </li>
+                  <li class="deep-list-item deep-list-item3">
+                    <a href="#installing-kit-driver" class="link link-iar-setup">
+                      <span class="deep-list-item-count">1.3</span> Installing
+                      kit driver <span class="dotted-space"></span>3</a
+                    >
+                  </li>
+                </ol>
+                <!-- deep list of contents end -->
+              </li>
+              <li class="list-item list-item2">
+                <a href="#tech-setup" class="link link-about-document">
+                  <span class="list-item-count">2</span> SDL and IAR EWARM setup
+                  <span class="dotted-space"></span>4</a
+                >
+                <!-- deep list of contents start -->
+                <ol class="deep-list-of-contents">
+                  <li class="deep-list-item deep-list-item1">
+                    <a
+                      href="#enviornment-setup"
+                      class="link link-connection-setup"
+                    >
+                      <span class="deep-list-item-count">2.1</span> SDL
+                      environment setup <span class="dotted-space"></span>4</a
+                    >
+                  </li>
+                  <li class="deep-list-item deep-list-item2">
+                    <a href="#iar-ewarm-setup" class="link link-power-up">
+                      <span class="deep-list-item-count">2.2</span> IAR EWARM
+                      setup <span class="dotted-space"></span>4</a
+                    >
+                  </li>
+                  <li class="deep-list-item deep-list-item3">
+                    <a href="#iar-connection-setup" class="link link-iar-setup">
+                      <span class="deep-list-item-count">2.3</span> Connection
+                      setup <span class="dotted-space"></span>5</a
+                    >
+                    <!-- deeper list of contents start -->
+                    <ol class="deeper-list-of-contents">
+                      <li class="deeper-llist-item deeper-list-item1">
+                        <a href="#getting-started" class="link link-iar-setup">
+                          <span class="deeper-list-item-count">2.3.1</span>
+                          Debugging with single core CM0+ workspace<span
+                            class="dotted-space"
+                          ></span
+                          >6</a
+                        >
+                      </li>
+                      <li class="deeper-llist-item deeper-list-item2">
+                        <a href="#getting-started" class="link link-iar-setup">
+                          <span class="deeper-list-item-count">2.3.2</span>
+                          Debugging with single core CM4 workspace<span
+                            class="dotted-space"
+                          ></span
+                          >10</a
+                        >
+                      </li>
+                      <li class="deeper-llist-item deeper-list-item3">
+                        <a href="#getting-started" class="link link-iar-setup">
+                          <span class="deeper-list-item-count">2.3.3</span>
+                          Debugging with dual core CM0+ and CM4 workspace<span
+                            class="dotted-space"
+                          ></span
+                          >14</a
+                        >
+                      </li>
+                    </ol>
+                    <!-- deeper list of contents end -->
+                  </li>
+                </ol>
+                <!-- deep list of contents end -->
+              </li>
+              <li class="list-item list-item3">
+                <a href="#troubleshooting" class="link link-about-document">
+                  <span class="list-item-count">3</span>Troubleshooting
+                  <span class="dotted-space"></span>19</a
+                >
+                <!-- deep list of contents start -->
+                <ol class="deep-list-of-contents">
+                  <li class="deep-list-item deep-list-item1">
+                    <a
+                      href="#getting-started"
+                      class="link link-connection-setup"
+                    >
+                      <span class="deep-list-item-count">3.1</span> Connecting
+                      troubleshooting <span class="dotted-space"></span>19</a
+                    >
+                  </li>
+                  <li class="deep-list-item deep-list-item2">
+                    <a href="#getting-started" class="link link-power-up">
+                      <span class="deep-list-item-count">3.2</span> Driver
+                      troubleshooting <span class="dotted-space"></span>19</a
+                    >
+                  </li>
+                  <li class="deep-list-item deep-list-item3">
+                    <a href="#getting-started" class="link link-iar-setup">
+                      <span class="deep-list-item-count">3.3</span> Debugger
+                      troubleshooting <span class="dotted-space"></span>19</a
+                    >
+                  </li>
+                  <li class="deep-list-item deep-list-item4">
+                    <a href="#getting-started" class="link link-iar-setup">
+                      <span class="deep-list-item-count">3.4</span> Key points
+                      <span class="dotted-space"></span>19</a
+                    >
+                  </li>
+                </ol>
+                <!-- deep list of contents end -->
+              </li>
+            </ol>
+            <!-- list of contents end -->
+            <a href="#glossary" class="link link-about-document"
+              >Glossary <span class="dotted-space"></span>20</a
+            ><a href="#references" class="link link-about-document"
+              >References <span class="dotted-space"></span>21</a
+            ><a href="#references" class="link link-about-document"
+              >Revision history <span class="dotted-space"></span>22</a
+            >
+          </nav>
+        </div>
+      </section>
+      <!-- Table of content end -->
+
+      <!-- Section Getting started start -->
+      <section id="getting-started" class="section section-getting-started">
+        <article class="section-part section-starter">
+          <h2 class="section-part-title">
+            <span class="part-count">1</span> Getting started
+          </h2>
+          <p class="section-part-description">
+            This section explains the hardware set up.
+            <a href="#table-1" class="blue-links">Table 1</a> lists the
+            pre-requisites for the set up.
+          </p>
+          <div id="table-1" class="table-container">
+            <h4 class="table-title">
+              <span class="table-no">Table 1</span> Pre-requisites
+            </h4>
+            <table class="table table-pre-requisites">
+              <thead class="table-header">
+                <tr>
+                  <th class="left-cell">Quantity</th>
+                  <th>Description</th>
+                  <th class="right-cell">Remarks</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="left-cell">1</td>
+                  <td>CYTVII-B-E-1M-SK</td>
+                  <td class="right-cell">
+                    Traveo II Body Entry Series Starter KIt
+                  </td>
+                </tr>
+                <tr>
+                  <td class="left-cell">1</td>
+                  <td>Micro USB cable</td>
+                  <td class="right-cell">For power and communication</td>
+                </tr>
+                <tr>
+                  <td class="left-cell">1</td>
+                  <td>PC</td>
+                  <td class="right-cell">With USB port</td>
+                </tr>
+                <tr>
+                  <td class="left-cell">1</td>
+                  <td>IAR EWARM 8.42.1</td>
+                  <td class="right-cell">Downloaded from the web</td>
+                </tr>
+                <tr>
+                  <td class="left-cell">1</td>
+                  <td>Sample Driver Library v7.0,0</td>
+                  <td class="right-cell">Downloaded from the web</td>
+                </tr>
+                <tr>
+                  <td class="left-cell">-</td>
+                  <td>Firmware</td>
+                  <td class="right-cell">Pre-installed</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+        <article
+          id="connection-setup"
+          class="section-part section-part-connection-setup"
+        >
+          <h2 class="section-part-title">
+            <span class="part-count">1.1</span>Connection setup
+          </h2>
+          <p class="section-part-description">
+            Connect the USB cable from the PC to the Starter kit. The Starter
+            kit is powered by the PC via the USB cable (5 V). Check if the mode
+            LED (LED3) and the power LED (LED2) are turned ON.
+          </p>
+          <div class="figure-container">
+            <img src="images/image-000.jpg" alt="" class="figure" />
+          </div>
+          <h4 class="figure-caption">
+            <span class="figure-no">Figure 1</span> Connection between Pc and
+            starter kit
+          </h4>
+        </article>
+        <article id="power-up" class="section-part section-part-power-up">
+          <h2 class="section-part-title">
+            <span class="part-count">1.2</span> Power up
+          </h2>
+          <p class="section-part-description">
+            When powered ON, the device will start executing the pre-installed
+            firmware, which is indicated by the blinking user LEDs (LED1 is
+            controlled by core Arm® Cortex®-M0+ (CM0+) and LED4 is controlled by
+            core Cortex-M4 (CM4)).
+          </p>
+          <div class="notes">
+            <p class="note-title">Note:</p>
+            <p class="note-full">
+              To indicate that the starter kit is powered ON and the USB
+              controller is starting in the correct mode, the amber colored
+              status LED3 must be permanently ON. But, LED3 does not indicate a
+              successful USB driver installation.
+            </p>
+          </div>
+          <div class="figure-container">
+            <img src="images/image-005.jpg" alt="" class="figure" />
+          </div>
+          <h4 class="figure-caption">
+            <span class="figure-no">Figure 2</span> LED indicating power ON
+          </h4>
+        </article>
+        <article
+          id="installing-kit-driver"
+          class="section-part section-part-installing-kit-driver"
+        >
+          <h2 class="section-part-title">
+            <span class="part-count">1.3</span> Installing kit driver
+          </h2>
+          <p class="section-part-description">
+            To work with the Starter kit, the KitProg3 USB-UART driver must be
+            installed on the system. For more details, see the Updating KitProg3
+            chapter in the KitProg3 user guide
+            <a href="#user-guide" class="blue-links">[1]</a>.
+          </p>
+          <p class="section-part-description">
+            Confirm that the Starter kit is recognized as a KitProg3 device on Windows (open Device Manager, follow the 
+            menu path <span class="bold">View > Devices by container</span>) as shown in <a href="#figure-3" class="blue-links">Figure 3</a>. This completes the hardware setup.
+          </p>
+          </div>
+          <div id="figure-3" class="figure-container">
+            <img src="images/image-001.jpg" alt="" class="figure" />
+          </div>
+          <h4 class="figure-caption">
+            <span class="figure-no">Figure 3</span> Viewing KitProg3 driver in Device Manager
+          </h4>
+          
+          <div class="notes">
+            <p class="note-title">Note:</p>
+            <p class="note-full">Do not press SW3. Pressing SW3 changes the mode of the USB controller. This is necessary only for 
+                upgrading the USB driver firmware and other activities. For more details, see the KitProg3 user 
+                guide <a href="#kitprog3" class="blue-links">[1]</a>.
+                
+            </p>
+          </div>
+          <p class="more-info">
+          For more information related to the Starter kit, see the Traveo II Starter Kit User Guide <a href="#starter-kit" class="">[2]</a>.</p>
+        </article>
+      </section>
+      <!-- Section Getting started end -->
+
+      <!-- Section SDL and IAR EWARM setup start -->
+      <section id="tech-setup" class="section section-tech-setup">
+        <article class="section-part section-starter">
+            <h2 class="section-part-title">
+              <span class="part-count">2</span> SDL and IAR EWARM setup
+            </h2>
+            <p class="section-part-description">This section explains how to run an example from the SDL on the Traveo II Starter Kit using the IAR C-SPY debugger.
+            </p>
+        </article>
+        <article id="enviornment-setup" class="section-part section-enviornment-setup">
+            <h2 class="section-part-title">
+              <span class="part-count">2.1</span> SDL environment setup
+            </h2>
+            <p class="section-part-description">Download the latest SDL for the Traveo II Starter Kit on the target system. Install the SDL outside the default 
+                Program Files to allow the IDE to access and create temporary files. <a href="#figure-4" class="blue-links">Figure 4</a> shows the sample path.
+            </p>
+            <div id="figure-4" class="figure-container">
+              <img src="images/image-006.jpg" alt="" class="figure" />
+            </div>
+            <h4 class="figure-caption">
+              <span class="figure-no">Figure 4</span>SDL 7.0.0 top-level directory
+            </h4>
+        </article>
+        <article id="iar-ewarm-setup" class="section-part section-iar-ewarm-setup">
+            <h2 class="section-part-title">
+              <span class="part-count">2.2</span>  IAR EWARM setup
+            </h2>
+            <p class="section-part-description">Open the Readme.pdf from the root folder of the SDL and use the same link to download the version of IAR 
+                EWARM supported by the SDL.
+            </p>
+            <p class="section-part-description">Download the software and run the installation (note that the installation might take some time). When you 
+                open the IAR EWARM for the first time, select the license in the License wizard. If you do not have the license, it 
+                is strongly recommended to register for Code size limited license type. See <a href="#figure-5" class="blue-links">Figure 5</a>.
+            </p>    
+            <div class="notes">
+                <p class="note-title">Note:</p>
+                <p class="note-full">
+                    IAR EWARM v8.42.1 is only for reference; always use the IAR EWARM version supported by the 
+                    specific SDL release.
+                </p>
+            </div>
+            <div id="figure-5" class="figure-container">
+              <img src="images/image-007.jpg" alt="" class="figure" />
+            </div>
+            <h4 class="figure-caption">
+              <span class="figure-no">Figure 5</span>SDL 7.0.0 top-level directory
+            </h4>
+        </article>
+        <article id="iar-connection-setup" class="section-part section-connection-setup">
+            <h2 class="section-part-title">
+              <span class="part-count">2.3</span> Connection setup
+            </h2>
+            <p class="section-part-description">There are two debugging methods with IAR EWARM:
+            </p>
+            <ol class="method-list">
+                <li class="method method1"><span class="method-name">Debugging with code downloaded on to RAM</span>
+                </li>
+                <li class="method method2"><span class="method-name">Debugging with code downloaded on to the FLASH memory (described in this document)</span>
+                </li>
+            </ol>
+            <p class="section-part-description">SDL supports three types of workspaces under FLASH memory debugging as listed in <a href="#table-2" class="blue-links">Table 2</a>.</p>
+            
+          <div id="table-2" class="table-container">
+            <h4 class="table-title">
+              <span class="table-no">Table 2</span> IAR Flash workspaces and functions
+            </h4>
+            <table class="table table-2">
+                <thead>
+                  <tr>
+                    <th class="left-cell">Workspace</th>
+                    <th>Application core</th>
+                    <th>Number of cores supported</th>
+                    <th class="right-cell">Details</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="left-cell">Single core CM0+ workspace "tvii1bm_flash_cm0plus_template"</td>
+                    <td>No</td>
+                    <td>Single</td>
+                    <td class="right-cell">Single core download and debug for CM0+ core</td>
+                  </tr>
+                  <tr>
+                    <td class="left-cell">Single core CM4 workspace "tvii1bm_flash_cm4_mc_template"</td>
+                    <td>Yes</td>
+                    <td>Single</td>
+                    <td class="right-cell">Single core download and debug for CM4 core; works as client/slave workspace in multicore configuration.    
+                        <div class="notes">
+                            <p class="note-title">Note:</p>
+                            <p class="note-full">
+                                It is possible to 
+                                debug only with 
+                                CM4, when CM0+ 
+                                executes some 
+                                code, thus 
+                                enabling CM4. 
+                            </p>
+                        </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="left-cell">Dual core CM0+ and CM4 workspace "tvii1bm_flash_cm0plus_cm4_template"</td>
+                    <td>Yes</td>
+                    <td>Dual</td>
+                    <td class="right-cell">Dual core download and debug for CM0+ and CM4 core; works as master workspace in multicore configuration<br></td>
+                  </tr>
+                </tbody>
+                </table>
+          </div>  
+          <div class="notes">
+              <p class="note-title">Note:</p>
+              <p class="note-full">
+                Both CM0+ and CM4 can do normal code execution, but from an architectural point only CM4 is 
+                considered as the application core. After a reset, the default core is always the CM0+ core. To 
+                enable the CM4 core, CM0+ must call Cy_SysEnableApplCore (). In the SDL, this is usually done 
+                within main_cm0plus.c. 
+              </p>
+          </div>
+          <p class="section-part-description">
+            Before downloading and debugging with the multicore master project, you must build the multicore slave 
+            project for the application core (which is CM4 here)
+          </p>
+          <p class="section-part-description">
+            Open the master workspace (dual core CM0+ and CM4 workspaces) for multicore debugging. The slave 
+            workspace (single core CM4 workspace) will automatically open from the master workspace when you click 
+            <span class="bold">Download and Debug</span>.
+        </p>
+        </article>
+      </section>
+      <!-- Section SDL and IAR EWARM setup end -->
+
+      <!-- Section Troubleshooting start -->
+      <section
+        id="troubleshooting"
+        class="section section-troubleshooting"
+      ></section>
+      <!-- Section Troubleshooting end -->
+
+      <!-- Section glossary start -->
+      <section id="glossary" class="section section-glossary"></section>
+      <!-- Section glossary end -->
+
+      <!-- Section Reference start -->
+      <section id="references" class="section section-references"></section>
+      <!-- Section Reference end -->
+
+      <!-- Section Revision history start -->
+      <section
+        id="revision-history"
+        class="section section-revision-history"
+      ></section>
+      <!-- Section Revision history end -->
+    </main>
+    <!-- Main content end -->
+
+    <!-- Footer start -->
+    <footer class="section section-footer"></footer>
+    <!-- Footer end -->
+  </body>
+</html>
