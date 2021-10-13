@@ -173,7 +173,8 @@ table {
 }
 
 .note-title,
-.note-full {
+.note-full,
+.italic {
   font-style: italic;
 }
 
@@ -188,4 +189,24 @@ table {
 
 .method-name {
   margin-left: 2rem;
+}
+
+.debugging-list {
+  list-style: none;
+}
+
+.debug-method,
+.debug-method-info {
+  margin: 1.5rem 0 2rem 0;
+}
+
+.debug-method {
+  display: flex;
+}
+.debug-method-text {
+  margin-left: 2rem;
+}
+
+.mb-4 {
+  margin-bottom: 4rem;
 }

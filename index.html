@@ -123,7 +123,7 @@
                     <!-- deeper list of contents start -->
                     <ol class="deeper-list-of-contents">
                       <li class="deeper-llist-item deeper-list-item1">
-                        <a href="#getting-started" class="link link-iar-setup">
+                        <a href="#debug-with-single-core-cm0plus" class="link link-iar-setup">
                           <span class="deeper-list-item-count">2.3.1</span>
                           Debugging with single core CM0+ workspace<span
                             class="dotted-space"
@@ -132,7 +132,7 @@
                         >
                       </li>
                       <li class="deeper-llist-item deeper-list-item2">
-                        <a href="#getting-started" class="link link-iar-setup">
+                        <a href="#debug-with-single-core-cm4" class="link link-iar-setup">
                           <span class="deeper-list-item-count">2.3.2</span>
                           Debugging with single core CM4 workspace<span
                             class="dotted-space"
@@ -141,7 +141,7 @@
                         >
                       </li>
                       <li class="deeper-llist-item deeper-list-item3">
-                        <a href="#getting-started" class="link link-iar-setup">
+                        <a href="#debug-with-dual-core" class="link link-iar-setup">
                           <span class="deeper-list-item-count">2.3.3</span>
                           Debugging with dual core CM0+ and CM4 workspace<span
                             class="dotted-space"
@@ -278,7 +278,7 @@
             kit is powered by the PC via the USB cable (5 V). Check if the mode
             LED (LED3) and the power LED (LED2) are turned ON.
           </p>
-          <div class="figure-container">
+          <div id="figure-1" class="figure-container">
             <img src="images/image-000.jpg" alt="" class="figure" />
           </div>
           <h4 class="figure-caption">
@@ -305,7 +305,7 @@
               successful USB driver installation.
             </p>
           </div>
-          <div class="figure-container">
+          <div id="figure-2" class="figure-container">
             <img src="images/image-005.jpg" alt="" class="figure" />
           </div>
           <h4 class="figure-caption">
@@ -411,8 +411,8 @@
                 <li class="method method2"><span class="method-name">Debugging with code downloaded on to the FLASH memory (described in this document)</span>
                 </li>
             </ol>
-            <p class="section-part-description">SDL supports three types of workspaces under FLASH memory debugging as listed in <a href="#table-2" class="blue-links">Table 2</a>.</p>
-            
+            <p class="section-part-description">SDL supports three types of workspaces under FLASH memory debugging as listed in <a href="#table-2" class="blue-links">Table 2</a>.
+            </p>
           <div id="table-2" class="table-container">
             <h4 class="table-title">
               <span class="table-no">Table 2</span> IAR Flash workspaces and functions
@@ -477,8 +477,266 @@
             Open the master workspace (dual core CM0+ and CM4 workspaces) for multicore debugging. The slave 
             workspace (single core CM4 workspace) will automatically open from the master workspace when you click 
             <span class="bold">Download and Debug</span>.
-        </p>
+          </p>
         </article>
+        <!-- deep section part 1 start -->
+        <article id="debug-with-single-core-cm0plus" class="section-part deep-section-part-1">
+          <h2 class="section-part-title">
+            <span class="part-count">2.3.1</span>Debugging with single core CM0+ workspace
+          </h2>
+          <ul class="debugging-list">
+            <li class="debugging-method debugging-method1">
+              <p class="debug-method"><span class="method-count">1.</span><span class="debug-method-text">Start IAR EWARM and open the SDL template workspace file: <span class="italic">tviibe1m\tools\iar\flash\tviibe1m_flash_cm0plus_template</span></span>
+              </p>
+              <div id="figure-6" class="figure-container">
+                <img src="images/image-008.jpg" alt="" class="figure" />
+              </div>
+              <h4 class="figure-caption mb-4">
+                <span class="figure-no">Figure 6</span>Selecting CM0+ single core template
+              </h4>
+            </li>
+            <li class="debugging-method debugging-method2">
+              <p class="debug-method"><span class="method-count">2.</span><span class="debug-method-text">Select the workspace revision <span class="bold">starter_kit</span> from drop-down list under <span class="bold">Workspace</span>, as shown in <a href="#figure-7" class="blue-links">Figure 7</a>.</span>
+              </p>
+              <div class="notes">
+                <p class="note-title">Note:</p>
+                <p class="note-full">
+                  Ignore other workspace revisions for this Starter kit. The other revisions constitute the MCU 
+                  assembled on other evaluation boards (CPU board).
+                </p>
+              </div>
+              <div id="figure-7" class="figure-container">
+                <img src="images/image-009.jpg" alt="" class="figure" />
+              </div>
+              <h4 class="figure-caption mb-4">
+                <span class="figure-no">Figure 7</span>Selecting workspace revision
+              </h4>
+            </li>
+            <li class="debugging-method debugging-method3">
+              <p class="debug-method"><span class="method-count">3.</span><span class="debug-method-text">For the build, right-click the cm0plus – starter_kit and select <span class="bold">Rebuild All</span>.</span>
+              </p>
+              <div id="figure-8" class="figure-container">
+                <img src="images/image-010.jpg" alt="" class="figure" />
+              </div>
+              <h4 class="figure-caption mb-4">
+                <span class="figure-no">Figure 8</span>Rebuilding workspace revision
+              </h4>
+            </li>
+            <li class="debugging-method debugging-method4">
+              <p class="debug-method"><span class="method-count">4.</span><span class="debug-method-text">The rebuild process starts. Check for errors and warnings in the <span class="bold">Build log</span>.</span>
+              </p>
+              <div id="figure-9" class="figure-container">
+                <img src="images/image-011.jpg" alt="" class="figure" />
+              </div>
+              <h4 class="figure-caption mb-4">
+                <span class="figure-no">Figure 9</span>Checking build status in build log
+              </h4>
+            </li>
+            <li class="debugging-method debugging-method5">
+              <p class="debug-method"><span class="method-count">5.</span><span class="debug-method-text">To load the program to the FLASH region of CM0+ core, click the green <span class="bold">Download and Debug</span> icon.</span>
+              </p>
+              <div id="figure-10" class="figure-container">
+                <img src="images/image-012.jpg" alt="" class="figure" />
+              </div>
+              <h4 class="figure-caption mb-4">
+                <span class="figure-no">Figure 10</span>Downloading and debugging
+              </h4>
+            </li>
+            <li class="debugging-method debugging-method6">
+              <p class="debug-method"><span class="method-count">6.</span><span class="debug-method-text">Now, click the <span class="bold">Go</span> icon to start execution.</span>
+              </p>
+              <div class="notes">
+                <p class="note-title">Note:</p>
+                <p class="note-full">
+                  You can also use the function keys in the Debug window: Go (F5), F10 (Step Over), F11 (Step into), 
+                  Ctrl+D (Download and Debug). 
+                </p>
+              </div>
+              <div id="figure-11" class="figure-container">
+                <img src="images/image-015.jpg" alt="" class="figure" />
+              </div>
+              <h4 class="figure-caption mb-4">
+                <span class="figure-no">Figure 11</span>Debugging with CM0+ core
+              </h4>
+              <p class="debug-method-info">LED1 should start blinking</p>
+              <div id="figure-12" class="figure-container">
+                <img src="images/image-019.jpg" alt="" class="figure" />
+              </div>
+              <h4 class="figure-caption mb-4">
+                <span class="figure-no">Figure 12</span>Blinking LED1
+              </h4>
+            </li>
+          </ul>
+        </article>
+        <!-- deep section part 1 end -->
+
+        <!-- deep section part 2 start -->
+        <article id="debug-with-single-core-cm4" class="section-part deep-section-part-2">
+          <h2 class="section-part-title">
+            <span class="part-count">2.3.2</span>Debugging with single core CM4 workspace
+          </h2>
+          <ul class="debugging-list">
+            <li class="debugging-method debugging-method1">
+              <p class="debug-method"><span class="method-count">1.</span><span class="debug-method-text">Start IAR EWARM and open the SDL template workspace file: <span class="italic">tviibe1m\tools\iar\flash\tviibe1m_flash_cm4_mc_template</span></span>
+              </p>
+              <div id="figure-13" class="figure-container">
+                <img src="images/image-018.jpg" alt="" class="figure" />
+              </div>
+              <h4 class="figure-caption mb-4">
+                <span class="figure-no">Figure 13</span>Selecting CM4 single core template
+              </h4>
+            </li>
+            <li class="debugging-method debugging-method2">
+              <p class="debug-method"><span class="method-count">2.</span><span class="debug-method-text">Select the workspace revision <span class="bold">starter_kit</span> from drop-down list under <span class="bold">Workspace</span>, as shown in <a href="#figure-7" class="blue-links">Figure 14</a>.</span>
+              </p>
+              <div id="figure-14" class="figure-container">
+                <img src="images/image-020.jpg" alt="" class="figure" />
+              </div>
+              <h4 class="figure-caption mb-4">
+                <span class="figure-no">Figure 14</span>Selecting workspace revision
+              </h4>
+            </li>
+            <li class="debugging-method debugging-method3">
+              <p class="debug-method"><span class="method-count">3.</span><span class="debug-method-text">For the build, right-click the cm4 – starter_kit and select <span class="bold">Rebuild All</span>.</span>
+              </p>
+              <div id="figure-15" class="figure-container">
+                <img src="images/image-021.jpg" alt="" class="figure" />
+              </div>
+              <h4 class="figure-caption mb-4">
+                <span class="figure-no">Figure 15</span>Rebuilding workspace revision
+              </h4>
+            </li>
+            <li class="debugging-method debugging-method4">
+              <p class="debug-method"><span class="method-count">4.</span><span class="debug-method-text">The rebuild process starts. Check for errors and warnings in the <span class="bold">Build log</span>.</span>
+              </p>
+              <div id="figure-16" class="figure-container">
+                <img src="images/image-024.jpg" alt="" class="figure" />
+              </div>
+              <h4 class="figure-caption mb-4">
+                <span class="figure-no">Figure 16</span>Checking build status in build log
+              </h4>
+            </li>
+            <li class="debugging-method debugging-method5">
+              <p class="debug-method"><span class="method-count">5.</span><span class="debug-method-text">To load the program to the FLASH region of CM4 core, click the green <span class="bold">Download and Debug</span> icon.</span>
+              </p>
+              <div id="figure-17" class="figure-container">
+                <img src="images/image-024.jpg" alt="" class="figure" />
+              </div>
+              <h4 class="figure-caption mb-4">
+                <span class="figure-no">Figure 17</span>Downloading and debugging
+              </h4>
+            </li>
+            <li class="debugging-method debugging-method6">
+              <p class="debug-method"><span class="method-count">6.</span><span class="debug-method-text">Now, click the <span class="bold">Go</span> icon to start execution.</span>
+              </p>
+              <div id="figure-18" class="figure-container">
+                <img src="images/image-028.jpg" alt="" class="figure" />
+              </div>
+              <h4 class="figure-caption mb-4">
+                <span class="figure-no">Figure 18</span>Debugging with CM4+ core
+              </h4>
+              <p class="debug-method-info">LED4 should start blinking</p>
+              <div id="figure-19" class="figure-container">
+                <img src="images/image-031.jpg" alt="" class="figure" />
+              </div>
+              <h4 class="figure-caption mb-4">
+                <span class="figure-no">Figure 19</span>Blinking LED4
+              </h4>
+            </li>
+          </ul>
+        </article>
+        <!-- deep section part 2 end -->
+
+        <!-- deep section part 3 start -->
+        <article id="debug-with-dual-core" class="section-part deep-section-part-2">
+          <h2 class="section-part-title">
+            <span class="part-count">2.3.3</span>Debugging with dual core CM0+ and CM4 workspace
+          </h2>
+          <ul class="debugging-list">
+            <li class="debugging-method debugging-method1">
+              <p class="debug-method"><span class="method-count">1.</span><span class="debug-method-text">Start IAR EWARM and open the SDL template workspace file: <span class="italic">tviibe1m\tools\iar\flash\tviibe1m_flash_cm0plus_cm4_template</span></span> 
+              </p>
+              <div id="figure-20" class="figure-container">
+                <img src="images/image-032.jpg" alt="" class="figure" />
+              </div>
+              <h4 class="figure-caption mb-4">
+                <span class="figure-no">Figure 20</span>Selecting CM00+ and CM4 dual core template
+              </h4>
+            </li>
+            <li class="debugging-method debugging-method2">
+              <p class="debug-method"><span class="method-count">2.</span><span class="debug-method-text">Select the workspace revision <span class="bold">starter_kit</span> from drop-down list under <span class="bold">Workspace</span>, as shown in <a href="#figure-21" class="blue-links">Figure 21</a>.</span>
+              </p>
+              <div id="figure-21" class="figure-container">
+                <img src="images/image-033.jpg" alt="" class="figure" />
+              </div>
+              <h4 class="figure-caption mb-4">
+                <span class="figure-no">Figure 21</span>Selecting workspace revision
+              </h4>
+            </li>
+            <li class="debugging-method debugging-method3">
+              <p class="debug-method"><span class="method-count">3.</span><span class="debug-method-text">For the build, right-click the cm0plus – starter_kit and select <span class="bold">Rebuild All</span>.</span>
+              </p>
+              <div id="figure-22" class="figure-container">
+                <img src="images/image-034.jpg" alt="" class="figure" />
+              </div>
+              <h4 class="figure-caption mb-4">
+                <span class="figure-no">Figure 22</span>Rebuilding workspace revision
+              </h4>
+            </li>
+            <li class="debugging-method debugging-method4">
+              <p class="debug-method"><span class="method-count">4.</span><span class="debug-method-text">The rebuild process starts. Check for errors and warnings in the <span class="bold">Build log</span>.</span>
+              </p>
+              <div id="figure-23" class="figure-container">
+                <img src="images/image-037.jpg" alt="" class="figure" />
+              </div>
+              <h4 class="figure-caption mb-4">
+                <span class="figure-no">Figure 23</span>Checking build status in build log
+              </h4>
+            </li>
+            <li class="debugging-method debugging-method5">
+              <p class="debug-method"><span class="method-count">5.</span><span class="debug-method-text">To load the program to the FLASH region of CM0+ and CM4 cores, click the green <span class="bold">Download and Debug</span> icon. This will automatically open the CM4 multicore client workspace, and the corresponding code will be 
+                downloaded into the FLASH region of respective cores.</span>
+              </p>
+              <div id="figure-24" class="figure-container">
+                <img src="images/image-038.jpg" alt="" class="figure" />
+              </div>
+              <h4 class="figure-caption mb-4">
+                <span class="figure-no">Figure 24</span>Downloading and debugging
+              </h4>
+            </li>
+            <li class="debugging-method debugging-method6">
+              <p class="debug-method"><span class="method-count">6.</span><span class="debug-method-text">Place a break point in the <code>SystemInit()</code>API in the CM4 core workspace. CM4 core will start executing after being enabled by CM0+ core. You can debug both cores simultaneously.</span>
+              </p>
+              <div id="figure-25" class="figure-container">
+                <img src="images/image-041.jpg" alt="" class="figure" />
+              </div>
+              <h4 class="figure-caption mb-4">
+                <span class="figure-no">Figure 25</span>Dual cores debug windows
+              </h4>
+            </li>
+            <li class="debugging-method debugging-method7">
+              <p class="debug-method"><span class="method-count">7.</span><span class="debug-method-text">Now, click the <span class="bold">Go</span> icon in the CM0+ workspace to start execution. After executing
+                <code>Cy_SysEnableApplCore()</code>, CM4 core will be enabled and the execution will reach the breakpoint in the 
+                CM4 workspace. You can now continue to debug the code from CM4 core.</span>
+              </p>
+              <div id="figure-26" class="figure-container">
+                <img src="images/image-042.jpg" alt="" class="figure" />
+              </div>
+              <h4 class="figure-caption mb-4">
+                <span class="figure-no">Figure 26</span>Debugging with CM0+ and CM4 cores
+              </h4>
+              <p class="debug-method-info">LED1 and LED4 should start blinking once both the cores are running.
+              </p>
+              <div id="figure-27" class="figure-container">
+                <img src="images/image-043.jpg" alt="" class="figure" />
+              </div>
+              <h4 class="figure-caption mb-4">
+                <span class="figure-no">Figure 27</span>Blinking LED1 and LED4
+              </h4>
+            </li>
+          </ul>
+        </article>
+        <!-- deep section part 3 end -->
       </section>
       <!-- Section SDL and IAR EWARM setup end -->
 
