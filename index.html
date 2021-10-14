@@ -16,7 +16,9 @@
   <body>
     <!-- header start -->
     <header class="header">
-      <section class="header-imgs"></section>
+      <div class="header-img">
+        <img src="images/logo.jpg" alt="" class="logo">
+      </div>
       <h1 class="page-title">
         Traveo II Entry Family Starter Kit – Getting Started
       </h1>
@@ -146,7 +148,7 @@
                 <!-- deep list of contents end -->
               </li>
               <li class="list-item list-item3">
-                <a href="#troubleshooting" class="link link-about-document">
+                <a href="#troubleshooting" class="link link-troubleshooting">
                   <span class="list-item-count">3</span>Troubleshooting
                   <span class="dotted-space"></span>19
                 </a>
@@ -154,27 +156,27 @@
                 <ol class="deep-list-of-contents">
                   <li class="deep-list-item deep-list-item1">
                     <a
-                      href="#getting-started"
-                      class="link link-connection-setup"
+                      href="#connection-troubleshooting"
+                      class="link link-connection-troubleshooting"
                     >
                       <span class="deep-list-item-count">3.1</span> Connecting troubleshooting 
                       <span class="dotted-space"></span>19
                     </a>
                   </li>
                   <li class="deep-list-item deep-list-item2">
-                    <a href="#getting-started" class="link link-power-up">
+                    <a href="#driver-troubleshooting" class="link link-driver-troubleshooting">
                       <span class="deep-list-item-count">3.2</span> Driver troubleshooting 
                       <span class="dotted-space"></span>19
                     </a>
                   </li>
                   <li class="deep-list-item deep-list-item3">
-                    <a href="#getting-started" class="link link-iar-setup">
+                    <a href="#debugger-troubleshooting" class="link link-debugger-troubleshooting">
                       <span class="deep-list-item-count">3.3</span> Debugger troubleshooting 
                       <span class="dotted-space"></span>19
                     </a>
                   </li>
                   <li class="deep-list-item deep-list-item4">
-                    <a href="#getting-started" class="link link-iar-setup">
+                    <a href="#troubleshooting-keypoints" class="link link-troubleshooting-keypoints">
                       <span class="deep-list-item-count">3.4</span> Key points
                       <span class="dotted-space"></span>19
                     </a>
@@ -306,7 +308,7 @@
           <p class="section-part-description">
             To work with the Starter kit, the KitProg3 USB-UART driver must be
             installed on the system. For more details, see the Updating KitProg3
-            chapter in the KitProg3 user guide <a href="#user-guide" class="blue-links">[1]</a>.
+            chapter in the KitProg3 user guide <a href="#kitprog3" class="blue-links">[1]</a>.
           </p>
           <p class="section-part-description">
             Confirm that the Starter kit is recognized as a KitProg3 device on Windows (open Device Manager, follow the 
@@ -325,7 +327,6 @@
             <p class="note-full">Do not press SW3. Pressing SW3 changes the mode of the USB controller. This is necessary only for 
                 upgrading the USB driver firmware and other activities. For more details, see the KitProg3 user 
                 guide <a href="#kitprog3" class="blue-links">[1]</a>.
-                
             </p>
           </div>
           <p class="more-info">
@@ -424,7 +425,7 @@
                     <td>Yes</td>
                     <td>Single</td>
                     <td class="right-cell">Single core download and debug for CM4 core; works as client/slave workspace in multicore configuration.    
-                        <div class="notes">
+                        <div class="notes table-2-note">
                             <p class="note-title">Note:</p>
                             <p class="note-full">
                                 It is possible to 
@@ -471,8 +472,8 @@
             <span class="part-count">2.3.1</span>Debugging with single core CM0+ workspace
           </h2>
           <ul class="debugging-list">
-            <li class="debugging-method debugging-method1">
-              <p class="debug-method"><span class="method-count">1.</span><span class="debug-method-text">Start IAR EWARM and open the SDL template workspace file: <span class="italic">tviibe1m\tools\iar\flash\tviibe1m_flash_cm0plus_template</span></span>
+            <li class="debugging-step debugging-step1">
+              <p class="debug-step"><span class="step-count">1.</span><span class="debug-step-text">Start IAR EWARM and open the SDL template workspace file: <span class="italic">tviibe1m\tools\iar\flash\tviibe1m_flash_cm0plus_template</span></span>
               </p>
               <div id="figure-6" class="figure-container">
                 <img src="images/image-008.jpg" alt="" class="figure" />
@@ -481,8 +482,8 @@
                 <span class="figure-no">Figure 6</span>Selecting CM0+ single core template
               </h4>
             </li>
-            <li class="debugging-method debugging-method2">
-              <p class="debug-method"><span class="method-count">2.</span><span class="debug-method-text">Select the workspace revision <span class="bold">starter_kit</span> from drop-down list under <span class="bold">Workspace</span>, as shown in <a href="#figure-7" class="blue-links">Figure 7</a>.</span>
+            <li class="debugging-step debugging-step2">
+              <p class="debug-step"><span class="step-count">2.</span><span class="debug-step-text">Select the workspace revision <span class="bold">starter_kit</span> from drop-down list under <span class="bold">Workspace</span>, as shown in <a href="#figure-7" class="blue-links">Figure 7</a>.</span>
               </p>
               <div class="notes">
                 <p class="note-title">Note:</p>
@@ -498,8 +499,8 @@
                 <span class="figure-no">Figure 7</span>Selecting workspace revision
               </h4>
             </li>
-            <li class="debugging-method debugging-method3">
-              <p class="debug-method"><span class="method-count">3.</span><span class="debug-method-text">For the build, right-click the cm0plus – starter_kit and select <span class="bold">Rebuild All</span>.</span>
+            <li class="debugging-step debugging-step3">
+              <p class="debug-step"><span class="step-count">3.</span><span class="debug-step-text">For the build, right-click the cm0plus – starter_kit and select <span class="bold">Rebuild All</span>.</span>
               </p>
               <div id="figure-8" class="figure-container">
                 <img src="images/image-010.jpg" alt="" class="figure" />
@@ -508,8 +509,8 @@
                 <span class="figure-no">Figure 8</span>Rebuilding workspace revision
               </h4>
             </li>
-            <li class="debugging-method debugging-method4">
-              <p class="debug-method"><span class="method-count">4.</span><span class="debug-method-text">The rebuild process starts. Check for errors and warnings in the <span class="bold">Build log</span>.</span>
+            <li class="debugging-step debugging-step4">
+              <p class="debug-step"><span class="step-count">4.</span><span class="debug-step-text">The rebuild process starts. Check for errors and warnings in the <span class="bold">Build log</span>.</span>
               </p>
               <div id="figure-9" class="figure-container">
                 <img src="images/image-011.jpg" alt="" class="figure" />
@@ -518,8 +519,8 @@
                 <span class="figure-no">Figure 9</span>Checking build status in build log
               </h4>
             </li>
-            <li class="debugging-method debugging-method5">
-              <p class="debug-method"><span class="method-count">5.</span><span class="debug-method-text">To load the program to the FLASH region of CM0+ core, click the green <span class="bold">Download and Debug</span> icon.</span>
+            <li class="debugging-step debugging-step5">
+              <p class="debug-step"><span class="step-count">5.</span><span class="debug-step-text">To load the program to the FLASH region of CM0+ core, click the green <span class="bold">Download and Debug</span> icon.</span>
               </p>
               <div id="figure-10" class="figure-container">
                 <img src="images/image-012.jpg" alt="" class="figure" />
@@ -528,8 +529,8 @@
                 <span class="figure-no">Figure 10</span>Downloading and debugging
               </h4>
             </li>
-            <li class="debugging-method debugging-method6">
-              <p class="debug-method"><span class="method-count">6.</span><span class="debug-method-text">Now, click the <span class="bold">Go</span> icon to start execution.</span>
+            <li class="debugging-step debugging-step6">
+              <p class="debug-step"><span class="step-count">6.</span><span class="debug-step-text">Now, click the <span class="bold">Go</span> icon to start execution.</span>
               </p>
               <div class="notes">
                 <p class="note-title">Note:</p>
@@ -544,7 +545,7 @@
               <h4 class="figure-caption mb-4">
                 <span class="figure-no">Figure 11</span>Debugging with CM0+ core
               </h4>
-              <p class="debug-method-info">LED1 should start blinking</p>
+              <p class="debug-step-info">LED1 should start blinking</p>
               <div id="figure-12" class="figure-container">
                 <img src="images/image-019.jpg" alt="" class="figure" />
               </div>
@@ -562,8 +563,8 @@
             <span class="part-count">2.3.2</span>Debugging with single core CM4 workspace
           </h2>
           <ul class="debugging-list">
-            <li class="debugging-method debugging-method1">
-              <p class="debug-method"><span class="method-count">1.</span><span class="debug-method-text">Start IAR EWARM and open the SDL template workspace file: <span class="italic">tviibe1m\tools\iar\flash\tviibe1m_flash_cm4_mc_template</span></span>
+            <li class="debugging-step debugging-step1">
+              <p class="debug-step"><span class="step-count">1.</span><span class="debug-step-text">Start IAR EWARM and open the SDL template workspace file: <span class="italic">tviibe1m\tools\iar\flash\tviibe1m_flash_cm4_mc_template</span></span>
               </p>
               <div id="figure-13" class="figure-container">
                 <img src="images/image-018.jpg" alt="" class="figure" />
@@ -572,8 +573,8 @@
                 <span class="figure-no">Figure 13</span>Selecting CM4 single core template
               </h4>
             </li>
-            <li class="debugging-method debugging-method2">
-              <p class="debug-method"><span class="method-count">2.</span><span class="debug-method-text">Select the workspace revision <span class="bold">starter_kit</span> from drop-down list under <span class="bold">Workspace</span>, as shown in <a href="#figure-7" class="blue-links">Figure 14</a>.</span>
+            <li class="debugging-step debugging-step2">
+              <p class="debug-step"><span class="step-count">2.</span><span class="debug-step-text">Select the workspace revision <span class="bold">starter_kit</span> from drop-down list under <span class="bold">Workspace</span>, as shown in <a href="#figure-14" class="blue-links">Figure 14</a>.</span>
               </p>
               <div id="figure-14" class="figure-container">
                 <img src="images/image-020.jpg" alt="" class="figure" />
@@ -582,8 +583,8 @@
                 <span class="figure-no">Figure 14</span>Selecting workspace revision
               </h4>
             </li>
-            <li class="debugging-method debugging-method3">
-              <p class="debug-method"><span class="method-count">3.</span><span class="debug-method-text">For the build, right-click the cm4 – starter_kit and select <span class="bold">Rebuild All</span>.</span>
+            <li class="debugging-step debugging-step3">
+              <p class="debug-step"><span class="step-count">3.</span><span class="debug-step-text">For the build, right-click the cm4 – starter_kit and select <span class="bold">Rebuild All</span>.</span>
               </p>
               <div id="figure-15" class="figure-container">
                 <img src="images/image-021.jpg" alt="" class="figure" />
@@ -592,8 +593,8 @@
                 <span class="figure-no">Figure 15</span>Rebuilding workspace revision
               </h4>
             </li>
-            <li class="debugging-method debugging-method4">
-              <p class="debug-method"><span class="method-count">4.</span><span class="debug-method-text">The rebuild process starts. Check for errors and warnings in the <span class="bold">Build log</span>.</span>
+            <li class="debugging-step debugging-step4">
+              <p class="debug-step"><span class="step-count">4.</span><span class="debug-step-text">The rebuild process starts. Check for errors and warnings in the <span class="bold">Build log</span>.</span>
               </p>
               <div id="figure-16" class="figure-container">
                 <img src="images/image-024.jpg" alt="" class="figure" />
@@ -602,8 +603,8 @@
                 <span class="figure-no">Figure 16</span>Checking build status in build log
               </h4>
             </li>
-            <li class="debugging-method debugging-method5">
-              <p class="debug-method"><span class="method-count">5.</span><span class="debug-method-text">To load the program to the FLASH region of CM4 core, click the green <span class="bold">Download and Debug</span> icon.</span>
+            <li class="debugging-step debugging-step5">
+              <p class="debug-step"><span class="step-count">5.</span><span class="debug-step-text">To load the program to the FLASH region of CM4 core, click the green <span class="bold">Download and Debug</span> icon.</span>
               </p>
               <div id="figure-17" class="figure-container">
                 <img src="images/image-024.jpg" alt="" class="figure" />
@@ -612,8 +613,8 @@
                 <span class="figure-no">Figure 17</span>Downloading and debugging
               </h4>
             </li>
-            <li class="debugging-method debugging-method6">
-              <p class="debug-method"><span class="method-count">6.</span><span class="debug-method-text">Now, click the <span class="bold">Go</span> icon to start execution.</span>
+            <li class="debugging-step debugging-step6">
+              <p class="debug-step"><span class="step-count">6.</span><span class="debug-step-text">Now, click the <span class="bold">Go</span> icon to start execution.</span>
               </p>
               <div id="figure-18" class="figure-container">
                 <img src="images/image-028.jpg" alt="" class="figure" />
@@ -621,7 +622,7 @@
               <h4 class="figure-caption mb-4">
                 <span class="figure-no">Figure 18</span>Debugging with CM4+ core
               </h4>
-              <p class="debug-method-info">LED4 should start blinking</p>
+              <p class="debug-step-info">LED4 should start blinking</p>
               <div id="figure-19" class="figure-container">
                 <img src="images/image-031.jpg" alt="" class="figure" />
               </div>
@@ -639,8 +640,8 @@
             <span class="part-count">2.3.3</span>Debugging with dual core CM0+ and CM4 workspace
           </h2>
           <ul class="debugging-list">
-            <li class="debugging-method debugging-method1">
-              <p class="debug-method"><span class="method-count">1.</span><span class="debug-method-text">Start IAR EWARM and open the SDL template workspace file: <span class="italic">tviibe1m\tools\iar\flash\tviibe1m_flash_cm0plus_cm4_template</span></span> 
+            <li class="debugging-step debugging-step1">
+              <p class="debug-step"><span class="step-count">1.</span><span class="debug-step-text">Start IAR EWARM and open the SDL template workspace file: <span class="italic">tviibe1m\tools\iar\flash\tviibe1m_flash_cm0plus_cm4_template</span></span> 
               </p>
               <div id="figure-20" class="figure-container">
                 <img src="images/image-032.jpg" alt="" class="figure" />
@@ -649,8 +650,8 @@
                 <span class="figure-no">Figure 20</span>Selecting CM00+ and CM4 dual core template
               </h4>
             </li>
-            <li class="debugging-method debugging-method2">
-              <p class="debug-method"><span class="method-count">2.</span><span class="debug-method-text">Select the workspace revision <span class="bold">starter_kit</span> from drop-down list under <span class="bold">Workspace</span>, as shown in <a href="#figure-21" class="blue-links">Figure 21</a>.</span>
+            <li class="debugging-step debugging-step2">
+              <p class="debug-step"><span class="step-count">2.</span><span class="debug-step-text">Select the workspace revision <span class="bold">starter_kit</span> from drop-down list under <span class="bold">Workspace</span>, as shown in <a href="#figure-21" class="blue-links">Figure 21</a>.</span>
               </p>
               <div id="figure-21" class="figure-container">
                 <img src="images/image-033.jpg" alt="" class="figure" />
@@ -659,8 +660,8 @@
                 <span class="figure-no">Figure 21</span>Selecting workspace revision
               </h4>
             </li>
-            <li class="debugging-method debugging-method3">
-              <p class="debug-method"><span class="method-count">3.</span><span class="debug-method-text">For the build, right-click the cm0plus – starter_kit and select <span class="bold">Rebuild All</span>.</span>
+            <li class="debugging-step debugging-step3">
+              <p class="debug-step"><span class="step-count">3.</span><span class="debug-step-text">For the build, right-click the cm0plus – starter_kit and select <span class="bold">Rebuild All</span>.</span>
               </p>
               <div id="figure-22" class="figure-container">
                 <img src="images/image-034.jpg" alt="" class="figure" />
@@ -669,8 +670,8 @@
                 <span class="figure-no">Figure 22</span>Rebuilding workspace revision
               </h4>
             </li>
-            <li class="debugging-method debugging-method4">
-              <p class="debug-method"><span class="method-count">4.</span><span class="debug-method-text">The rebuild process starts. Check for errors and warnings in the <span class="bold">Build log</span>.</span>
+            <li class="debugging-step debugging-step4">
+              <p class="debug-step"><span class="step-count">4.</span><span class="debug-step-text">The rebuild process starts. Check for errors and warnings in the <span class="bold">Build log</span>.</span>
               </p>
               <div id="figure-23" class="figure-container">
                 <img src="images/image-037.jpg" alt="" class="figure" />
@@ -679,8 +680,8 @@
                 <span class="figure-no">Figure 23</span>Checking build status in build log
               </h4>
             </li>
-            <li class="debugging-method debugging-method5">
-              <p class="debug-method"><span class="method-count">5.</span><span class="debug-method-text">To load the program to the FLASH region of CM0+ and CM4 cores, click the green <span class="bold">Download and Debug</span> icon. This will automatically open the CM4 multicore client workspace, and the corresponding code will be 
+            <li class="debugging-step debugging-step5">
+              <p class="debug-step"><span class="step-count">5.</span><span class="debug-step-text">To load the program to the FLASH region of CM0+ and CM4 cores, click the green <span class="bold">Download and Debug</span> icon. This will automatically open the CM4 multicore client workspace, and the corresponding code will be 
                 downloaded into the FLASH region of respective cores.</span>
               </p>
               <div id="figure-24" class="figure-container">
@@ -690,8 +691,8 @@
                 <span class="figure-no">Figure 24</span>Downloading and debugging
               </h4>
             </li>
-            <li class="debugging-method debugging-method6">
-              <p class="debug-method"><span class="method-count">6.</span><span class="debug-method-text">Place a break point in the <code>SystemInit()</code>API in the CM4 core workspace. CM4 core will start executing after being enabled by CM0+ core. You can debug both cores simultaneously.</span>
+            <li class="debugging-step debugging-step6">
+              <p class="debug-step"><span class="step-count">6.</span><span class="debug-step-text">Place a break point in the <code>SystemInit()</code>API in the CM4 core workspace. CM4 core will start executing after being enabled by CM0+ core. You can debug both cores simultaneously.</span>
               </p>
               <div id="figure-25" class="figure-container">
                 <img src="images/image-041.jpg" alt="" class="figure" />
@@ -700,8 +701,8 @@
                 <span class="figure-no">Figure 25</span>Dual cores debug windows
               </h4>
             </li>
-            <li class="debugging-method debugging-method7">
-              <p class="debug-method"><span class="method-count">7.</span><span class="debug-method-text">Now, click the <span class="bold">Go</span> icon in the CM0+ workspace to start execution. After executing
+            <li class="debugging-step debugging-step7">
+              <p class="debug-step"><span class="step-count">7.</span><span class="debug-step-text">Now, click the <span class="bold">Go</span> icon in the CM0+ workspace to start execution. After executing
                 <code>Cy_SysEnableApplCore()</code>, CM4 core will be enabled and the execution will reach the breakpoint in the 
                 CM4 workspace. You can now continue to debug the code from CM4 core.</span>
               </p>
@@ -711,7 +712,7 @@
               <h4 class="figure-caption mb-4">
                 <span class="figure-no">Figure 26</span>Debugging with CM0+ and CM4 cores
               </h4>
-              <p class="debug-method-info">LED1 and LED4 should start blinking once both the cores are running.
+              <p class="debug-step-info">LED1 and LED4 should start blinking once both the cores are running.
               </p>
               <div id="figure-27" class="figure-container">
                 <img src="images/image-043.jpg" alt="" class="figure" />
@@ -730,28 +731,251 @@
       <section
         id="troubleshooting"
         class="section section-troubleshooting"
-      ></section>
+      >
+        <article class="section-part section-starter">
+          <h2 class="section-part-title">
+            <span class="part-count">3</span>Troubleshooting
+          </h2>
+          <p class="section-part-description">This section explains possible issues and the workarounds.
+          </p>
+        </article>
+        <article id="connection-troubleshooting" class="section-part section-connection-troubleshooting">
+            <h2 class="section-part-title">
+              <span class="part-count">3.1</span>Connection troubleshooting
+            </h2>
+            <p class="error-message">
+             <span class="bold">Error:</span> Starter kit is not detected on the target system.
+            </p>
+            <ul class="troubleshooting-methods">
+              <li class="troublshoot-method troubleshoot-method1"><p class="troubleshoot-method-text">Connect the USB cable that comes with the Starter kit. Other USB cables may not connect data lines.</p></li>
+              <li class="troublshoot-method troubleshoot-method2"><p class="troubleshoot-method-text">Make sure LED3 is ON (CMSIS-DAP mode). If not, press SW3 to change the KitProg3 device mode.</p></li>
+              <li class="troublshoot-method troubleshoot-method3"><p class="troubleshoot-method-text">Make sure jumper R11 is closed.</p></li>
+            </ul>
+        </article>
+        <article id="driver-troubleshooting" class="section-part section-driver-troubleshooting">
+          <h2 class="section-part-title">
+            <span class="part-count">3.2</span>Driver troubleshooting
+          </h2>
+          <p class="error-message">
+           <span class="bold">Error:</span> Driver is not detected on the target system or “KitProg3” is not visible.
+          </p>
+          <p class="error-fix">
+            For more information on the supported driver, see the KitProg3 user guide <a href="#kitprog3" class="blue-links">[1]</a>
+          </p>
+        </article>
+        <article id="debugger-troubleshooting" class="section-part section-debugger-troubleshooting">
+          <h2 class="section-part-title">
+            <span class="part-count">3.3</span>Debugger troubleshooting
+          </h2>
+          <p class="error-message">
+           <span class="bold">Error:</span> While programming Traveo II device, CMSIS-DAP device is not found.
+          </p>
+          <p class="error-fix">
+            Check the USB cable connection and the state of LED3 (LED should be ON for CMSIS-DAP mode)
+          </p>
+        </article>
+        <article id="troubleshooting-keypoints" class="section-part section-troubleshooting-keypoints">
+            <h2 class="section-part-title">
+              <span class="part-count">3.4</span>Key points
+            </h2>
+            <ul class="keypoints-list">
+              <li class="key-point keypoint1">
+                <p class="key-point-text">
+                  CM0+ core should be running while debugging with CM4 in single core mode. CM0+ core enables the CM4 
+                  core by calling the <code>Cy_SysEnableApplCore()</code> API.
+                </p>
+              </li>
+              <li class="key-point keypoint2">
+                <p class="key-point-text">
+                  CM4 core workspace (tviibe1m_flash_cm4_mc_template) should be built before building the dual core 
+                  workspace (tviibe1m_flash_cm0plus_cm4_template).
+                </p>
+              </li>
+            </ul>
+        </article>
+      </section>
       <!-- Section Troubleshooting end -->
 
       <!-- Section glossary start -->
-      <section id="glossary" class="section section-glossary"></section>
+      <section id="glossary" class="section section-glossary">
+        <h2 class="section-title">Glossary</h2>
+        <table class="table table-3">
+          <thead>
+            <tr>
+              <th class="left-cell">Terms</th>
+              <th class="right-cell">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="left-cell">CM0+</td>
+              <td class="right-cell">Arm-Cortex-M0 plus</td>
+            </tr>
+            <tr>
+              <td class="left-cell">CM4</td>
+              <td class="right-cell">Arm-Cortex-M4</td>
+            </tr>
+            <tr>
+              <td class="left-cell">SDL</td>
+              <td class="right-cell">Sample Driver Library</td>
+            </tr>
+            <tr>
+              <td class="left-cell">SK</td>
+              <td class="right-cell">Starter Kit</td>
+            </tr>
+            <tr>
+              <td class="left-cell">USB</td>
+              <td class="right-cell">Universal Serial Bus</td>
+            </tr>
+            <tr>
+              <td class="left-cell">EWARM</td>
+              <td class="right-cell">Embedded Workbench for Arm</td>
+            </tr>
+            <tr>
+              <td class="left-cell">C-SPY</td>
+              <td class="right-cell">High Level Debugger Language for Embedded system</td>
+            </tr>
+          </tbody>
+          </table>
+      </section>
       <!-- Section glossary end -->
 
       <!-- Section Reference start -->
-      <section id="references" class="section section-references"></section>
+      <section id="references" class="section section-references">
+        <h2 class="section-title">References</h2>
+        <p id="kitprog3" class="reference"><span class="reference-count">[1]</span><a href="https://www.cypress.com/file/452701/download" class="blue-links">KitProg3 User Guide</a></p>
+        <p id="kitprog3" class="reference"><span class="reference-count">[2]</span><a href="#" class="blue-links">Traveo II Starter Kit User Guide</a></p>
+      </section>
       <!-- Section Reference end -->
 
       <!-- Section Revision history start -->
       <section
         id="revision-history"
         class="section section-revision-history"
-      ></section>
+      >
+        <h2 class="section-title">Revision history</h2>
+        <table class="table table-4">
+          <thead>
+            <tr>
+              <th class="left-cell">Document version</th>
+              <th>Date of release</th>
+              <th class="right-cell">Description of changes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="left-cell">**</td>
+              <td>2021-04-08</td>
+              <td class="right-cell">Initial release</td>
+            </tr>
+            <tr>
+              <td class="left-cell"></td>
+              <td></td>
+              <td class="right-cell"></td>
+            </tr>
+            <tr>
+              <td class="left-cell"></td>
+              <td></td>
+              <td class="right-cell"></td>
+            </tr>
+          </tbody>
+          </table>
+      </section>
       <!-- Section Revision history end -->
     </main>
     <!-- Main content end -->
 
     <!-- Footer start -->
-    <footer class="section section-footer"></footer>
+    <footer class="section-footer">
+      <div class="section trademarks">
+        <h4 class="trademarks-title">Trademarks</h4>
+        <p class="trademark-info">All referenced product or service names and trademarks are the property of their respective owners.</p>
+      </div>
+      <div class="footer-wrapper">
+        <div class="section footer-contents">
+          <div class="info">
+            <div class="info-part publishing-info">
+              <p class="edition-info">Edition 2021-04-08</p>
+              <p class="publishing">Published By</p>
+              <p class="publishing-company">Infineon Technologies AG</p>
+              <p class="company-address">81726 Munich, Germany</p>
+            </div>
+            <div class="info-part copyright-info">
+              <p class="copyright-owner">© 2021 Infineon Technologies AG.All Rights Reserved.</p>
+            </div>
+            <div class="info-part question-info">
+              <p class="question">Do you have a question about this document?</p>
+              <p class="support">Go to: <a href="www.cypress.com/support" class="blue-links">www.cypress.com/support</a></p>
+            </div>
+            <div class="info-part document-ref">
+              <p class="document-ref-title">Document reference</p>
+              <p class="ref-info">002-32910 Rev.**</p>
+            </div>
+          </div>
+          <div class="notice">
+            <h3 class="notice-title">Important notice</h3>
+            <p class="notice-para notice-para1">
+              The information given in this document shall in no 
+              event be regarded as a guarantee of conditions or 
+              characteristics (“Beschaffenheitsgarantie”) .
+            </p>
+            <p class="notice-para notice-para2 para-spaced">
+              With respect to any examples, hints or any typical 
+              values stated herein and/or any information 
+              regarding the application of the product, Infineon 
+              Technologies hereby disclaims any and all 
+              warranties and liabilities of any kind, including 
+              without limitation warranties of non-infringement of 
+              intellectual property rights of any third party. 
+            </p>
+            <p class="notice-para notice-para3 para-spaced">
+              In addition, any information given in this document 
+              is subject to customer’s compliance with its 
+              obligations stated in this document and any 
+              applicable legal requirements, norms and standards 
+              concerning customer’s products and any use of the 
+              product of Infineon Technologies in customer’s 
+              applications.
+            </p>
+            <p class="notice-para notice-para4 para-spaced">
+              The data contained in this document is exclusively 
+              intended for technically trained staff. It is the 
+              responsibility of customer’s technical departments 
+              to evaluate the suitability of the product for the 
+              intended application and the completeness of the 
+              product information given in this document with 
+              respect to such application.
+            </p>
+          </div>
+          <div class="warning">
+            <p class="notice-para notice-para5">
+              For further information on the product, technology, 
+              delivery terms and conditions and prices please 
+              contact your nearest Infineon Technologies office
+              (<a href="www.infineon.com" class="blue-links">www.infineon.com</a>).
+            </p>
+            <div class="warning-info">
+              <h3 class="warning-title">Warning</h3>
+              <p class="warning-para warning-para1">
+                Due to technical requirements products may contain 
+                dangerous substances. For information on the types 
+                in question please contact your nearest Infineon 
+                Technologies office.
+              </p>
+              <p class="warning-para warning-para2 para-spaced">
+                Except as otherwise explicitly approved by Infineon 
+                Technologies in a written document signed by 
+                authorized representatives of Infineon 
+                Technologies, Infineon Technologies’ products may 
+                not be used in any applications where a failure of the 
+                product or any consequences of the use thereof can 
+                reasonably be expected to result in personal injury.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
     <!-- Footer end -->
   </body>
 </html>

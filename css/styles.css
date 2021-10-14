@@ -6,7 +6,7 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 62.5%;
+  font-size: 62.5%; /* setting the root font size to 10px. It makes it really easy to make stuff responsive :D */
 }
 
 body {
@@ -29,8 +29,23 @@ ol {
   list-style-type: decimal;
 }
 
+tr,
+td {
+  height: auto;
+  min-height: 2rem;
+}
+
+/* header styles */
 .header {
   margin-bottom: 4rem;
+}
+
+.header-img {
+  margin-bottom: 2rem;
+}
+
+.logo {
+  width: 100%;
 }
 
 .page-title {
@@ -38,6 +53,7 @@ ol {
   font-size: 4rem;
 }
 
+/* section styles */
 .section {
   width: 80%;
   margin: auto;
@@ -53,15 +69,12 @@ ol {
   margin: 1.5rem 0;
 }
 
+/* getting started and toc styles */
 .description-title,
 .link {
   font-size: 1.6rem;
   margin-bottom: 1rem;
 }
-
-/* .section-table-of-contents {
-  margin-top: 4rem;
-} */
 
 .link {
   display: flex;
@@ -97,6 +110,7 @@ ol {
   margin: 0 0.2rem;
 }
 
+/* spaces between counts and names */
 .part-count,
 .table-no {
   margin-right: 6rem;
@@ -114,6 +128,7 @@ ol {
   display: inline-block;
 }
 
+/* sub section styles */
 .section-part {
   margin-bottom: 4rem;
 }
@@ -122,8 +137,10 @@ ol {
   margin: 1.5rem 0;
 }
 
-.blue-links {
-  color: cornflowerblue;
+/* table styles */
+
+.table-container {
+  overflow-y: auto;
 }
 
 .table-title {
@@ -153,6 +170,7 @@ table {
   border-right: none;
 }
 
+/* images style */
 .figure-container {
   width: 100%;
   border: 1px solid black;
@@ -167,6 +185,7 @@ table {
   margin: 0.5rem 0;
 }
 
+/* note styles */
 .notes {
   display: flex;
   margin: 3rem 0;
@@ -177,11 +196,12 @@ table {
 .italic {
   font-style: italic;
 }
-
-.bold {
-  font-weight: 700;
+/* this is utility class */
+.italic {
+  word-break: break-all;
 }
 
+/* debug methods lists styles */
 .method-list {
   line-height: 2.5rem;
   margin-bottom: 1.5rem;
@@ -195,18 +215,176 @@ table {
   list-style: none;
 }
 
-.debug-method,
-.debug-method-info {
+.debug-step,
+.debug-step-info {
   margin: 1.5rem 0 2rem 0;
 }
 
-.debug-method {
+.debug-step {
   display: flex;
 }
-.debug-method-text {
+.debug-step-text {
   margin-left: 2rem;
 }
 
+/* troubleshoot section styles */
+.error-message,
+.error-fix {
+  margin: 1.5rem 0;
+}
+
+.troubleshooting-methods,
+.keypoints-list {
+  margin-left: 1.8rem;
+  line-height: 2.5rem;
+  margin-top: 1rem;
+}
+
+/* reference section styles */
+.reference {
+  margin: 1rem 0;
+}
+
+.reference-count {
+  margin-right: 1.5rem;
+}
+
+/* footer styles */
+
+.footer-wrapper {
+  background-color: rgb(233, 215, 189);
+}
+
+.footer-contents {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.4rem;
+  flex-wrap: wrap;
+}
+
+.info {
+  width: 20%;
+}
+
+.publishing-info,
+.document-ref {
+  line-height: 2.7rem;
+}
+
+.info-part {
+  margin-top: 2rem;
+  font-weight: 700;
+}
+
+.notice,
+.warning {
+  width: 35%;
+}
+
+.notice {
+  margin-left: 5rem;
+}
+
+.notice-para,
+.warning-para {
+  text-align: justify;
+}
+
+.para-spaced {
+  margin-top: 1.5rem;
+}
+
+.notice-para5 {
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+.warning-title,
+.notice-title {
+  text-transform: uppercase;
+}
+
+/* utility styles */
+
 .mb-4 {
   margin-bottom: 4rem;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.blue-links {
+  color: cornflowerblue;
+}
+
+/* media queries */
+@media only screen and (min-width: 1440px) {
+  html {
+    font-size: 65%;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  html {
+    font-size: 70%;
+  }
+}
+@media only screen and (min-width: 1800px) {
+  html {
+    font-size: 75%;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  html {
+    font-size: 60%;
+  }
+}
+
+@media only screen and (max-width: 1160px) {
+  html {
+    font-size: 58%;
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  .page-title {
+    padding: 0 2rem;
+  }
+  .section {
+    width: 100%;
+    padding: 3rem 2rem;
+  }
+  .table-2-note > p {
+    margin-right: 2rem;
+  }
+}
+
+@media only screen and (max-width: 780px) {
+  .info,
+  .notice,
+  .warning {
+    width: 100%;
+  }
+  .notice {
+    margin-left: 0;
+    margin-top: 2rem;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  html {
+    font-size: 55%;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  html {
+    font-size: 45%;
+  }
+}
+
+@media only screen and (max-width: 376px) {
+  html {
+    font-size: 40%;
+  }
 }
